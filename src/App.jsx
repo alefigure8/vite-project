@@ -12,7 +12,7 @@ function App() {
  // get localStorage
   useEffect(()=>{
     const searchLocalstorage = () => {
-      const listBooks = JSON.parse(localStorage.getItem('Books' || []))
+      const listBooks = JSON.parse(localStorage.getItem('Books')) ?? []
       setBooks(listBooks)
     }
     searchLocalstorage()
