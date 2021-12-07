@@ -12,7 +12,6 @@ function ListadoPaciente({books, setBook, deleteBook}) {
                             Books
                             </span>
                         </p>
-
                         {books.map( book => (
                             <Books 
                                 books={book} 
@@ -21,7 +20,6 @@ function ListadoPaciente({books, setBook, deleteBook}) {
                                 deleteBook={deleteBook}
                              />
                         ))}
-
                     </>
                 ) : 
                 (

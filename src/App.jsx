@@ -42,6 +42,7 @@ function App() {
         <Listado
         books={books}
         setBook={setBook}
+        deleteBook={deleteBook}
         />
       </div>
     </div>

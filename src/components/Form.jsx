@@ -61,6 +61,7 @@ function Form({ setBooks, books, bookEdit, setBookEdit}) {
         if([book, author, genre, date, rate, synopsis].includes('')){
            return setError(true)
         } 
+
         setError(false)
 
         // Form values
@@ -77,7 +78,7 @@ function Form({ setBooks, books, bookEdit, setBookEdit}) {
         if(bookEdit.id){
             objBook.id = bookEdit.id
             const booksFilter = books.map(book => book.id === bookEdit.id ? objBook : book )
-            setBooks([...booksFilter])  
+            setBooks(booksFilter)  
 
             // set bookEdit in an empty object again
             setBookEdit({})
@@ -113,7 +114,7 @@ function Form({ setBooks, books, bookEdit, setBookEdit}) {
             className="bg-white shadow-md rounded-lg py-10 px-5"
             onSubmit={handleSubmit}
         >
-            { error && <Error>Todos los campos son obligatorios</Error> }
+            { error && <Error>All fields are requiered!</Error> }
 
             <div className="mb-5">
                 <label 
