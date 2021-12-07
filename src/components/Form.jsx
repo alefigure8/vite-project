@@ -27,32 +27,6 @@ function Form({ setBooks, books, bookEdit, setBookEdit}) {
       } 
         }, [bookEdit])
 
-    //swith for each input value and change states
-    function handleValue (e) {
-        const inputvalue = e.target.value
-        const state = (e.target.id)
-        switch (state) {
-            case 'book':
-                setBook(inputvalue)
-                break
-            case 'author':
-                setAuthor(inputvalue)
-                break          
-            case 'genre':
-                setGenre(inputvalue)
-                break          
-            case 'date':
-                setDate(inputvalue)
-                break          
-            case 'rate':
-                setRate(inputvalue)
-                break         
-            case 'synopsis':
-                setSynopsis(inputvalue)
-                break              
-        }
-    }
-
     // validate and send info to App
     function handleSubmit (e) {
         e.preventDefault()
@@ -129,7 +103,7 @@ function Form({ setBooks, books, bookEdit, setBookEdit}) {
                     placeholder="Add book title"
                     className="border-2 w-full p-2 placeholder-gray-400 rounded-md"
                     value={book}
-                    onChange={handleValue}
+                    onChange={(e) => setBook(e.target.value)}
                 />
             </div>
             <div className="mb-5">
@@ -145,7 +119,7 @@ function Form({ setBooks, books, bookEdit, setBookEdit}) {
                     placeholder="Add author"
                     className="border-2 w-full p-2 placeholder-gray-400 rounded-md"
                     value={author}
-                    onChange={handleValue}
+                    onChange={(e) => setAuthor(e.target.value)}
                 />
             </div>
             <div className="mb-5">
@@ -161,7 +135,7 @@ function Form({ setBooks, books, bookEdit, setBookEdit}) {
                     placeholder="Add genre"
                     className="border-2 w-full p-2 placeholder-gray-400 rounded-md"
                     value={genre}
-                    onChange={handleValue}
+                    onChange={(e) => setGenre(e.target.value)}
                 />
             </div>
             <div className="mb-5">
@@ -176,7 +150,7 @@ function Form({ setBooks, books, bookEdit, setBookEdit}) {
                     id="date" 
                     className="border-2 w-full p-2 placeholder-gray-400 rounded-md"
                     value={date}
-                    onChange={handleValue}
+                    onChange={(e) => setDate(e.target.value)}
                 />
             </div>
             <div className="mb-5">
@@ -194,7 +168,7 @@ function Form({ setBooks, books, bookEdit, setBookEdit}) {
                     id="rate" 
                     className="border-2 w-full p-2 placeholder-gray-400 rounded-md"
                     value={rate}
-                    onChange={handleValue}
+                    onChange={(e) => setRate(e.target.value)}
                 />
             </div>
             <div className="mb-5">
@@ -209,7 +183,7 @@ function Form({ setBooks, books, bookEdit, setBookEdit}) {
                     placeholder="A bref synopsis og the book"
                     name="synopsis"
                     value={synopsis}
-                    onChange={handleValue}
+                    onChange={(e) => setSynopsis(e.target.value)}
                 >
                     {synopsis}
                 </textarea>
