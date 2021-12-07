@@ -1,14 +1,33 @@
 import Header from './components/Header'
 import Form from './components/Form'
 import Listado from './components/Listado'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 
 function App() {
-  const listBooks = localStorage.getItem('Books')
-  const [books, setBooks] = useState(JSON.parse(listBooks) || [])
+  // states
+  const [books, setBooks] = useState([])
   const[book, setBook] = useState({})
-  localStorage.setItem('Books', JSON.stringify(books))
+
+ // get localStorage
+  useEffect(()=>{
+    const searchLocalstorage = () => {
+      const listBooks = localStorage.getItem('Books' || [])
+      setBooks(JSON.parse(listBooks))
+    }
+    searchLocalstorage()
+  },[])
+
+  // set localStorage
+  useEffect(()=>{
+    localStorage.setItem('Books', JSON.stringify(books))
+  }, [books])
+
+  // delete book
+  function deleteBook (id){
+    const filterDelete = books.filter(book => book.id !== id )
+    setBooks(filterDelete)
+  }
 
   return (
     <div className="container mx-auto md:mt-14 p-5">
@@ -18,10 +37,12 @@ function App() {
           setBooks={setBooks}
           books={books}
           bookEdit={book}
+          setBookEdit = {setBook}
         />
         <Listado
         books={books}
         setBook={setBook}
+        deleteBook={deleteBook}
         />
       </div>
     </div>
