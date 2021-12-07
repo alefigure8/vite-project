@@ -12,7 +12,7 @@ function ListadoPaciente({books, setBook, deleteBook}) {
                             Books
                             </span>
                         </p>
-                        <div className="md:overflow-y-scroll  md:h-screen">
+
                         {books.map( book => (
                             <Books 
                                 books={book} 
@@ -21,7 +21,7 @@ function ListadoPaciente({books, setBook, deleteBook}) {
                                 deleteBook={deleteBook}
                              />
                         ))}
-                        </div>
+
                     </>
                 ) : 
                 (
