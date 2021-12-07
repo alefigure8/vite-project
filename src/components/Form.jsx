@@ -75,9 +75,9 @@ function Form({ setBooks, books, bookEdit, setBookEdit}) {
 
         // verify if exist in localStorage and chage it or create one
         if(bookEdit.id){
-            const booksFilter = books.filter(book => book.id !== bookEdit.id )
             objBook.id = bookEdit.id
-            setBooks([...booksFilter, objBook])  
+            const booksFilter = books.map(book => book.id === bookEdit.id ? objBook : book )
+            setBooks([...booksFilter])  
 
             // set bookEdit in an empty object again
             setBookEdit({})
