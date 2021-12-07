@@ -1,0 +1,14 @@
+# vite-project
+A React To Do List Project
+
+This is just a first test using React. Something simple just for testing.
+
+I expect to do more of all this in the next days, with more logic and code behind. 
+
+# Screenshot
+
+![Screenshot](https://lh3.googleusercontent.com/VjGGkRwc2w9lF8l4hSw5dRSDXlGm8nV_KpA7q50odd-nhNaEtMcTi8xeFE3s-sjtkSDpTOTueBFnJLixXKSfn8xVa8cXOMry5I_yn-0LrX-D7FFo_zvqs573t7dpaZZ3lyXYIaZsbLHByEvCLLa7F2qutK0jyAJRWpe6-ga2rGJ4swGlgG2K2lkArMoO1DUto-6b_s_hIFVQUXEI0ZJaxA-uB_Rt2wn3mOvqC12OV9HLb89Rmf5P1DW2oRniW3gtI2t8TwO0XLv08-HC_RmRYm1CJ9swoir_X0v2eHlsFXvGYiA2NTccrLSnOjS6VOeKmKX6pzLYM-fQzCSeVWXyhnkyuHc8kOLyrlfekx-EC7qzaXf9yACOMRbcxhaiVTVHg9q81Xe8VofHcOSvZ83tb3AxTScxevUIVPU6ysxAR0WBroeM8zletLVBf4Pl9Ga_GISyHW6cyyPHiyjEnlJ9_U6cUzFvd5g6avf14zb041tvvi1mo6MxMKWp9iKRiMgaqVqOfdnoJT1eHnVLwRZ0-SWgTn35RjcsXw5Lhym_fAfT33p9qtnqJUIYxF4Kq1y-DY2BVqPS06EDWoFrGAVkI-4MZEK9eaT1ohahJnDQy7Qdepld7oYJocj9VkdRzg1jWtqy7ty8alr8dcIZ5hLf2mv2mmgEchVeDrvaWBQtwinPb-FpnzaiPW1LWz4QoGLqqi9IXB6rBRjeyxyasTLblxIUf_f66uRyIh7k8FsjNBu2dA0loXdPljngWjfgzuWS9XafG5bphfsxmCqa7g=w1440-h730-no?authuser=0)
+
+# Visit
+
+https://inspiring-lamport-15deed.netlify.app/
