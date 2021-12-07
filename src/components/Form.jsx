@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Error from './Error'
 
-function Form({ setBooks, books, bookEdit }) {
+function Form({ setBooks, books, bookEdit, setBookEdit}) {
 
     // form state
     const [book, setBook] = useState('')
@@ -14,9 +14,18 @@ function Form({ setBooks, books, bookEdit }) {
     //error state
     const [error, setError] = useState(false)
 
+    // wait for changes in bookEdit
     useEffect(() => {
-            
-    }, [bookEdit])
+     if (Object.keys(bookEdit).length > 0) {
+        // Fill inputs
+        setBook(bookEdit.book)
+        setAuthor(bookEdit.author)
+        setGenre(bookEdit.genre)
+        setDate(bookEdit.date)
+        setRate(bookEdit.rate)
+        setSynopsis(bookEdit.synopsis)
+      } 
+        }, [bookEdit])
 
     //swith for each input value and change states
     function handleValue (e) {
@@ -48,14 +57,36 @@ function Form({ setBooks, books, bookEdit }) {
     function handleSubmit (e) {
         e.preventDefault()
 
-      if([book, author, genre, date, rate, synopsis].includes('')){
+        // validate for empty inputs
+        if([book, author, genre, date, rate, synopsis].includes('')){
            return setError(true)
         } 
-
         setError(false)
-        
-        const objBook = {id: generateId(), book, author, genre, date, rate, synopsis}
-        setBooks([...books, objBook])  
+
+        // Form values
+        const objBook = {
+            book, 
+            author, 
+            genre, 
+            date, 
+            rate, 
+            synopsis
+        }
+
+        // verify if exist in localStorage and chage it or create one
+        if(bookEdit.id){
+            const booksFilter = books.filter(book => book.id !== bookEdit.id )
+            objBook.id = bookEdit.id
+            setBooks([...booksFilter, objBook])  
+
+            // set bookEdit in an empty object again
+            setBookEdit({})
+        } else {
+            objBook.id =  generateId()
+            setBooks([...books, objBook])  
+        }
+
+        // Clean form
         cleanForm()
     }
 
@@ -185,7 +216,7 @@ function Form({ setBooks, books, bookEdit }) {
             <input 
             type="submit" 
             className="bg-indigo-600 w-full text-white rounded-md hover:bg-indigo-700 cursor-pointer p-2 uppercase font-bold transition-all duration-300"
-            value="Save"
+            value={bookEdit.id ? 'Update changes' : 'Save Book'}
             />
         </form>
     </div>

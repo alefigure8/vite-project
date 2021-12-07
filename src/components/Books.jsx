@@ -1,5 +1,13 @@
-function books({ books, setBook }) {
-    const {book, author, genre, date, rate, synopsis} = books
+function books({ books, setBook, deleteBook }) {
+    const {book, author, genre, date, rate, synopsis, id} = books
+
+    //Delete function with confirmation
+    function handleDelete () {
+        const confirmDelete = confirm(`Wait a sec!!!! \n Are you sure you want to delete ${book}?`)
+        if(confirmDelete){
+             deleteBook(id)
+        }
+    }
     return (
         <div className="bg-white shadow-md rounded-lg py-10 px-5 md:m-3 mb-3">
         <p className="font-bold mb-3 text-gray-700 uppercase">Book: {'\n'}
@@ -29,6 +37,7 @@ function books({ books, setBook }) {
             <button 
             type="button"
             className="py-2 px-10 bg-red-600 hover:bg-red-700 text-white rounded-md font-bold uppercase"
+            onClick={handleDelete}
             >Eliminar</button>
         </div>
     </div>
