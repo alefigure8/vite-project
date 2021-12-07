@@ -11,4 +11,4 @@ I expect to do more of all this in the next days, with more logic and code behin
 
 # Visit
 
-https://breakfast-boook-club-gmshwdbps-alegomeznieto.vercel.app
+https://breakfast-boook-club-5ikx8d47c-alegomeznieto.vercel.app/
