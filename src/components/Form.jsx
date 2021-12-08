@@ -163,7 +163,7 @@ function Form({ setBooks, books, bookEdit, setBookEdit}) {
                     type="number" 
                     min="1" 
                     max="5"
-                    step="0.25"
+                    step="0.50"
                     name="rate" 
                     id="rate" 
                     className="border-2 w-full p-2 placeholder-gray-400 rounded-md"

@@ -7,11 +7,23 @@ function ListadoPaciente({books, setBook, deleteBook}) {
                 (
                     <>
                         <h2 className="text-3xl font-black text-center" >Book´s List</h2>
-                        <p className="text-lg mt-5 text-center mb-10"> Admin your {'\n'}
-                            <span className="text-indigo-600 text-center font-bold">
+                        <p className="text-lg mt-5 text-center mb-5"> Admin your {'\n'}
+                            <span className="text-indigo-600 text-center font-bold mb-5">
                             Books
                             </span>
                         </p>
+                        <div>
+                            <input 
+                            type="submit" 
+                            className="px-10 py-2 bg-indigo-500 mr-3 rounded-md mb-3 text-white font-semibold cursor-pointer hover:bg-indigo-600 transition-all duration-300 shadow-lg md:ml-3"
+                            value="Rate"
+                            />
+                            <input 
+                            type="submit" 
+                            className="px-10 py-2 bg-indigo-500 mr-3 rounded-md mb-3 text-white font-semibold cursor-pointer hover:bg-indigo-600 transition-all duration-300 shadow-lg"
+                            value="Date"
+                            />
+                        </div>
                         {books.map( book => (
                             <Books 
                                 books={book} 
