@@ -2,6 +2,12 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* Font */
+
+h1 {
+  font-family: 'Nanum Pen Script', cursive;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
