@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Error from './Error'
 
-function Form({ setBooks, books, bookEdit, setBookEdit}) {
+function Form({ setBooks, books, bookEdit, setBookEdit, setSort}) {
 
     // form state
     const [book, setBook] = useState('')
@@ -53,12 +53,13 @@ function Form({ setBooks, books, bookEdit, setBookEdit}) {
             objBook.id = bookEdit.id
             const booksFilter = books.map(book => book.id === bookEdit.id ? objBook : book )
             setBooks(booksFilter)  
-
+            setSort(booksFilter)
             // set bookEdit in an empty object again
             setBookEdit({})
         } else {
             objBook.id =  generateId()
             setBooks([...books, objBook])  
+            setSort([...books, objBook])
         }
 
         // Clean form

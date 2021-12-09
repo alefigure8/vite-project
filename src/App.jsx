@@ -8,12 +8,14 @@ function App() {
   // states
   const [books, setBooks] = useState([])
   const[book, setBook] = useState({})
+  const[sort, setSort] = useState([])
 
  // get localStorage
   useEffect(()=>{
     const searchLocalstorage = () => {
       const listBooks = JSON.parse(localStorage.getItem('Books')) ?? []
       setBooks(listBooks)
+      setSort(listBooks)
     }
     searchLocalstorage()
   },[])
@@ -27,6 +29,7 @@ function App() {
   function deleteBook (id){
     const filterDelete = books.filter(book => book.id !== id )
     setBooks(filterDelete)
+    setSort(filterDelete)
   }
 
   return (
@@ -38,8 +41,11 @@ function App() {
           books={books}
           bookEdit={book}
           setBookEdit = {setBook}
+          setSort={setSort}
         />
         <Listado
+        sort={sort}
+        setSort={setSort}
         books={books}
         setBook={setBook}
         deleteBook={deleteBook}

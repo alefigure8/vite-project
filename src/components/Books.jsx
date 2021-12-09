@@ -1,4 +1,5 @@
-function books({ books, setBook, deleteBook }) {
+function books({ books, setBook, deleteBook, handleAuthor, handleGenre}) {
+
     const {book, author, genre, date, rate, synopsis, id} = books
 
     //Delete function with confirmation
@@ -28,10 +29,22 @@ function books({ books, setBook, deleteBook }) {
             </div>
             <div className="h-0 overflow-hidden transition-all duration-500" id={id}>
                 <p className="font-bold mb-3 text-gray-700 uppercase mt-3">Author: {'\n'}
-                    <span className="font-normal normal-case">{ author }</span>
+                    <span 
+                        className="font-normal normal-case cursor-pointer"
+                        onClick={()=>{
+                            handleAuthor(author)
+                        }}
+                    >{ author }
+                    </span>
                 </p>
                 <p className="font-bold mb-3 text-gray-700 uppercase">Genre: {'\n'}
-                    <span className="font-normal normal-case">{ genre }</span>
+                <span 
+                        className="font-normal normal-case cursor-pointer"
+                        onClick={()=>{
+                            handleGenre(genre)
+                        }}
+                    >{ genre }
+                    </span>
                 </p>
                 <p className="font-bold mb-3 text-gray-700 uppercase">Date: {'\n'}
                     <span className="font-normal normal-case">{ date }</span>
