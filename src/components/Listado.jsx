@@ -5,7 +5,7 @@ function ListadoPaciente({books, setBook, deleteBook, setSort, sort}) {
     function handleSubmit(id){
         switch(id){
             case 'date':
-                const date = [...books].sort((a, b) => a.date - b.date)
+                const date = [...books].sort((a, b) => new Date(a.date) - new Date(b.date))
                 setSort(date)
                 break
             case 'rate':
